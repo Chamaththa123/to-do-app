@@ -17,15 +17,15 @@
 
 ## Backend Setup
 
-cd backend
-npm install
-npm start (for run the project)
-npm test (for unit testing)
-npm run test:integration (for integration testing)
+cd backend <br/>
+npm install<br/>
+npm start (for run the project)<br/>
+npm test (for unit testing)<br/>
+npm run test:integration (for integration testing)<br/>
 
 ## Frontend Setup
 
-cd frontend
-npm install
-npm run dev (for run the project)
-npm test (for unit testing)
+cd frontend<br/>
+npm install<br/>
+npm run dev (for run the project)<br/>
+npm test (for unit testing)<br/>
