@@ -64,8 +64,11 @@ const AddTask = ({ handleLoading }) => {
 
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block mb-1 font-medium">Title</label>
+          <label htmlFor="Title" className="block mb-1 font-medium">
+            Title
+          </label>
           <input
+            id="Title"
             type="text"
             name="Title"
             value={formData.Title}
@@ -83,8 +86,11 @@ const AddTask = ({ handleLoading }) => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-1 font-medium">Description</label>
+          <label htmlFor="Description" className="block mb-1 font-medium">
+            Description
+          </label>
           <textarea
+            id="Description"
             name="Description"
             value={formData.Description}
             onChange={handleChange}
