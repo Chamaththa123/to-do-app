@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useState } from "react";
+import AddTask from "../component/task/AddTask";
+import AllTasks from "../component/task/AllTasks";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
+  const [taskLoading, setTaskLoading] = useState(false);
+  const handleLoading = () => setTaskLoading((pre) => !pre);
   return (
-    <div>
-       <div className="flex justify-center items-center h-screen bg-blue-50">
-      <h1 className="text-4xl font-bold text-blue-600">
-        Hello Tailwind + Vite + React!
-      </h1>
+    <div className="grid md:grid-cols-2 grid-cols-1 gap-10 p-4 w-full">
+      <div className=" mt-10 p-6 shadow-md rounded-md bg-gray-50">
+        <AddTask handleLoading={handleLoading} />
+      </div>
+      <div className=" mt-10 p-6 shadow-md rounded-md bg-gray-50">
+        <AllTasks taskLoading={taskLoading} handleLoading={handleLoading} />
+      </div>
+      <ToastContainer position="top-right" />
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

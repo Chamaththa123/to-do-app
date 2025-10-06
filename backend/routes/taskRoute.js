@@ -9,6 +9,6 @@ const {
 
 router.post("/", createTask);
 router.get("/", getTasks);
-router.patch("/:idTask", markAsCompleted);
+router.patch("/complete/:idTask", markAsCompleted);
 
 module.exports = router;
