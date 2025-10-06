@@ -1,7 +1,7 @@
 const db = require("../config/db");
 
 const insertTask = (Title, Description) => {
-  const query = "INSERT INTO task (Title,Description) VALUES (?, ?)";
+  const query = "INSERT INTO tasks (Title,Description) VALUES (?, ?)";
   return new Promise((resolve, reject) => {
     db.query(query, [Title, Description], (err, results) => {
       if (err) {
@@ -13,9 +13,9 @@ const insertTask = (Title, Description) => {
   });
 };
 
-
 const getTask = () => {
-   const query = "SELECT * FROM task WHERE Status = 0 ORDER BY idTask DESC LIMIT 5";
+  const query =
+    "SELECT * FROM tasks WHERE Status = 0 ORDER BY created_at DESC LIMIT 5";
   return new Promise((resolve, reject) => {
     db.query(query, [], (err, results) => {
       if (err) {
@@ -28,7 +28,7 @@ const getTask = () => {
 };
 
 const updateTaskStatus = (idTask) => {
-  const query = `UPDATE task SET Status=1 WHERE idTask=?`;
+  const query = `UPDATE tasks SET Status=1 WHERE idTask=?`;
 
   return new Promise((resolve, reject) => {
     db.query(query, [idTask], (err, results) => {
@@ -41,9 +41,8 @@ const updateTaskStatus = (idTask) => {
   });
 };
 
-
 module.exports = {
   insertTask,
   getTask,
-  updateTaskStatus
+  updateTaskStatus,
 };
